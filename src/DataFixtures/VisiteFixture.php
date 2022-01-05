@@ -27,6 +27,6 @@ class VisiteFixture extends Fixture
             $manager->persist($visite);
         }
         
-        $manager->flush();
+            $manager->flush();
     }
 }

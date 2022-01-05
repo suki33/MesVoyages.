@@ -1,5 +1,7 @@
 {% extends "basefront.html.twig" %}
 
 {% block body %}
-<h1>page des voyages</h1>
+    {% for visite in visites %}
+        {{ visites.ville }}
+        {% endfor %}
 {% endblock %}
