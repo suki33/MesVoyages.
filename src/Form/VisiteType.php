@@ -20,7 +20,7 @@ class VisiteType extends AbstractType
             ->add('ville')
             ->add('pays')
             ->add('datecreation', null,[
-                'label'=>'date de création'
+                'label'=>'Date de création'
             ])
             ->add('note', IntegerType::class,[
                 'attr'=>[
@@ -30,10 +30,10 @@ class VisiteType extends AbstractType
             ])
             ->add('avis')
             ->add('tempmin', null,[
-                'label'=>'t° min'
+                'label'=>'T° min'
             ])
             ->add('tempmax', null,[
-                'label'=>'t° max'
+                'label'=>'T° max'
             ])
             ->add('environnements', EntityType::class, [
                 'class'=> Environnement::class,
@@ -43,7 +43,7 @@ class VisiteType extends AbstractType
             ])
             ->add ('imageFile', FileType::class,[
                 'required'=>false,
-                'label'=>'image'
+                'label'=>'Image'
             ])
             ->add('submit', SubmitType::class, [
                 'label'=>'Enregistrer'

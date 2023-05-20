@@ -42,8 +42,9 @@ class Visite
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\Range(min = 0, max= 20)
      */
-    private $note;
+    private $note; 
 
     /**
      * @ORM\Column(type="text", nullable=true)
@@ -57,6 +58,7 @@ class Visite
 
     /**
      * @ORM\Column(type="integer", nullable=true)
+     * @Assert\GreaterThan(propertyPath="tempmin")
      */
     private $tempmax;
 

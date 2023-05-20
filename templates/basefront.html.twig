@@ -3,17 +3,15 @@
 {% block title %}{% endblock %}
 {% block stylesheets %}{% endblock %}
 {% block top %}
-    <div class="container">
+    <div class="container"style="background-color:transparent;text-align:center;font-family: 'Exo 2', sans-serif;color: #1d2951">
         <!-- titre -->
-        <div class="text-center">
-            <h1>Mes voyages</h1>
-            <p>Je vais vous présenter les villes que j'ai visitées lors de mes voyages</p>
+        <div class="text-center" style="padding: 20px;margin: 15px">
+            <h1 style="padding:10px;text-align: center;font-size: 80px">˗ˏˋ☁︎ <em>Mes Voyages</em> ✈´ˎ˗</h1>
         </div>
-    </div>
     <!-- menu -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent" style="font-size:40px;padding-bottom: 50px">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-           <ul class="navbar-nav mr-auto">
+           <ul class="navbar-nav mr-auto"style="text-align: center; margin:auto; overflow: hidden;background-color:#9dc8e9;border-radius: 10px">
             <li class="nav-item">
                 <a class="nav-link" href="{{ path('accueil') }}">Accueil</a>
             </li>
@@ -25,8 +23,8 @@
             </li>
            </ul>
         </div>
-    </nav>
-</div          
+    </nav> 
+    </div>              
 {% endblock %}
-{% block budy %}{% endblock %}
+{% block body %}{% endblock %}
 {% block javascript %}{% endblock %}
