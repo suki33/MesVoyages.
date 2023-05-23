@@ -2,6 +2,7 @@
 
 {% block body %}
     <h2>Nouvelle visite :</h2>
+      {{ include ('_admin.voyage.form.html.twig') }}
     {{ form_start(formvisite) }}
         <div class="row mt-3">
             <div class="col">

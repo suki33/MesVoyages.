@@ -1,5 +1,73 @@
 {% extends "basefront.html.twig" %}
 
 {% block body %}
-<h1>page d'accueil</h1>
+   
+   <div class="container1">
+        <h2 style="color:#1d2951;padding-bottom: 10px"> ˚ ⋆｡˚ Petite explication pour simplifier votre navigation ⋆*･ﾟ</h2>
+        <p>
+        <div style="text-align:left;font-size: 25px"> 
+          Bienvenue tout le monde !  Je vais vous présenter les villes que j'ai visitées lors de mes différents voyages.</br>
+            Dans la partie <a href="{{ path('voyages') }}">Voyages</a>, vous pouvez voir la liste des visites que j'ai faites dans différentes villes.</br>
+        A chaque fois j'ai précisé la ville visitée, le pays, j'ai mis une note (entre 0 et 20) et il y a aussi la date de la visite.<br/>
+        Vous pouvez trier la liste en fonction des villes, des pays, des notes et des dates, 
+        aussi bien dans l'ordre croissant que décroissant.<br/>
+        Vous pouvez aussi filtrer les visites par rapport à une ville ou un pays.<br/>
+        En cliquant sur la ville de la visite, vous pourrez avoir plus d'informations dessus :<br/>
+        températures minimum et maximum, une description de la visite, les environnements (montagne, mer, désert...) et une photo.<br/>
+        Enfin, vous pouvez me contacter avec le formulaire de <a href="{{ path('contact') }}">Contact</a>. ˙ᵕ˙
+        </div>
+        </p>
+        
+      <div>
+    <table>
+        <tr>
+            <td>
+                <h2 style="color:#1d2951;padding-bottom: 10px">˚ ⋆｡˚ Mon dernier voyage : Séoul ⋆*･ﾟ</h2>
+                <div class="card mb-4">
+                    <div class="img-thumbnail">
+                        <img src="https://wallpaperaccess.com/full/101559.jpg" alt="card-img-top" style="width: 100%;height:auto">
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+     </div>
+    <h2 style="color:#1d2951;padding-bottom: 10px">˚ ⋆｡˚ Mes autres visites ⋆*･ﾟ</h2>
+    <table>
+        <tr>
+            {% for visite in visites %}
+            <td style="vertical-align: text-top; width: 50%;align-content: center;">
+               <div class="card mb-4"
+    style="align-content:center;              
+    border: 3px #1d2951 solid ;
+    background-color:transparent;
+    padding: 5px ;
+    display: inline-block;
+    width: 100%;
+    height:100%;
+    overflow: auto;">
+                    <div class="col">
+                        <p>{{ visite.datecreationstring }}</p>
+                        <a href="{{ path('voyages.showone',{id:visite.id}) }}">{{ visite.ville }}</a>
+                          <p>{{ visite.pays }}</p>
+                            {% if visite.note>=10 %}
+                                <p class="text-success mt-1">{{ visite.note }}/20</p>
+                            {% else %}
+                                <p class="text-danger mt-1">{{ visite.note }}/20</p>
+                            {% endif %}
+                    <div class="col">
+                        {% if visite.imagename %}
+                        <img src="{{ app.request.getBasePath()~vich_uploader_asset(visite, 'imageFile') }}" 
+                             class="card-img-top" style="width:100px;height:100px;">
+                        {% endif %}
+                    </div>
+                    
+                    </div>
+                </div>
+            </td>
+            {% endfor %}
+        </tr>
+    </table>
+</div>
+           
 {% endblock %}

@@ -52,7 +52,7 @@ class ContactController extends AbstractController {
     {     
             $message = (new Swift_Message('Message du site de voyages'))
                 ->setFrom($contact->getEmail())
-                ->setTo('contact@mesvoyages.fr')
+                ->setTo('betulcolak361@gmail.com')
                 ->setbody(
                     $this->renderView(
                          'pages/_email.html.twig', [
